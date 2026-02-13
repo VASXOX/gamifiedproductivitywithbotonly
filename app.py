@@ -2,7 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 
 # ---------- CONFIG ----------
-st.set_page_config(page_title="Pixel AI Companion", page_icon="💖")
+st.set_page_config(page_title="CHATBOT", page_icon="")
 
 # ---------- GEMINI SETUP ----------
 try:
