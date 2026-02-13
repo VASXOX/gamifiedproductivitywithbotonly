@@ -32,27 +32,47 @@ except Exception as e:
 st.markdown("""
 <style>
 body {
-    background-color: #111;
+    background: url("bgg.gif") no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'VT323', monospace;
+    color: white;
 }
 
+body::before {
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.55);
+    z-index:-1;
+}
+
+/* USER BUBBLE */
 .chat-bubble-user {
     background: #ff4fa3;
-    padding: 12px 18px;
-    border-radius: 20px;
-    margin: 8px 0;
+    border: 2px solid #ff2e92;
+    padding: 14px 22px;
+    border-radius: 30px;
+    margin: 12px 0;
     text-align: right;
     color: white;
+    font-size: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
 }
 
+/* BOT BUBBLE */
 .chat-bubble-bot {
-    background: rgba(255,255,255,0.1);
-    padding: 12px 18px;
-    border-radius: 20px;
-    margin: 8px 0;
+    background: rgba(0,0,0,0.6);
+    border: 2px solid #ff4fa3;
+    padding: 14px 22px;
+    border-radius: 30px;
+    margin: 12px 0;
     text-align: left;
     color: white;
+    font-size: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
 }
 </style>
+
 """, unsafe_allow_html=True)
 
 # ---------- HEADER ----------
