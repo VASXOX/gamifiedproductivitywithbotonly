@@ -31,14 +31,27 @@ except Exception as e:
 # ---------- CUSTOM CSS ----------
 st.markdown("""
 <style>
-body {
-    background: url("bgg.gif") no-repeat center center fixed;
-    background-size: cover;
-    font-family: 'VT323', monospace;
-    color: white;
+
+/* IMPORT PIXEL FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body::before {
+/* BACKGROUND */
+body {
+    font-family:'VT323', monospace;
+    background: url("bgg.gif") no-repeat center center fixed;
+    background-size: cover;
+    min-height:100vh;
+    color:white;
+}
+
+/* DARK OVERLAY */
+body::before{
     content:"";
     position:fixed;
     inset:0;
@@ -46,32 +59,87 @@ body::before {
     z-index:-1;
 }
 
+/* CHAT CONTAINER (LIKE TASK CARDS STYLE) */
+.chat-container{
+    width:80%;
+    max-width:800px;
+    margin:50px auto;
+    padding:30px;
+    border-radius:30px;
+    background:rgba(0,0,0,0.6);
+    border:2px solid #ff4fa3;
+    box-shadow:0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* TITLE (PIXEL STYLE) */
+.chat-title{
+    font-family:'Press Start 2P';
+    font-size:14px;
+    text-align:center;
+    margin-bottom:30px;
+    color:#ff4fa3;
+}
+
 /* USER BUBBLE */
-.chat-bubble-user {
-    background: #ff4fa3;
-    border: 2px solid #ff2e92;
-    padding: 14px 22px;
-    border-radius: 30px;
-    margin: 12px 0;
-    text-align: right;
-    color: white;
-    font-size: 20px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+.chat-bubble-user{
+    background:#ff4fa3;
+    border:2px solid #ff2e92;
+    padding:16px 24px;
+    border-radius:30px;
+    margin:15px 0;
+    text-align:right;
+    font-size:22px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.4);
 }
 
 /* BOT BUBBLE */
-.chat-bubble-bot {
-    background: rgba(0,0,0,0.6);
-    border: 2px solid #ff4fa3;
-    padding: 14px 22px;
-    border-radius: 30px;
-    margin: 12px 0;
-    text-align: left;
-    color: white;
-    font-size: 20px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+.chat-bubble-bot{
+    background:rgba(0,0,0,0.7);
+    border:2px solid #ff4fa3;
+    padding:16px 24px;
+    border-radius:30px;
+    margin:15px 0;
+    text-align:left;
+    font-size:22px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.4);
 }
+
+/* OPTIONAL INPUT AREA (MATCHES TASK INPUT STYLE) */
+.chat-input{
+    display:flex;
+    margin-top:25px;
+    gap:10px;
+}
+
+.chat-input input{
+    flex:1;
+    padding:15px 20px;
+    border-radius:40px;
+    border:2px solid #ff2e92;
+    background:#ff4fa3;
+    color:white;
+    font-size:20px;
+    font-family:'VT323';
+    outline:none;
+}
+
+.chat-input button{
+    padding:12px 20px;
+    border-radius:30px;
+    border:none;
+    background:#ff2e92;
+    color:white;
+    font-family:'VT323';
+    font-size:20px;
+    cursor:pointer;
+}
+
+.chat-input button:hover{
+    opacity:0.85;
+}
+
 </style>
+
 
 """, unsafe_allow_html=True)
 
